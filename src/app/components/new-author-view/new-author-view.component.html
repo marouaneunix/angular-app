@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="save()" [formGroup]="authorForm">
+            <div class="form-group">
+                <label for="forId">Id</label>
+                <input type="text" class="form-control"
+                    formControlName="id"
+                    id="forId" 
+                    aria-describedby="idHelp"
+                    >
+            </div>
+            <div class="form-group">
+                <label for="forAge">age</label>
+                <input type="text" class="form-control" id="forAge" formControlName="age">
+            </div>
+            <div class="form-group">
+                <label for="forName">name</label>
+                <input type="text" class="form-control" id="forName" formControlName="name">
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!authorForm.valid">Submit</button>
+        </form>          
+    </div>
+    <div class="col">
+        <p>
+            Form Status: {{ authorForm.status }}
+        </p>
+        <p>
+            Form value : {{author}}
+        </p>
+    </div>
+</div>
+

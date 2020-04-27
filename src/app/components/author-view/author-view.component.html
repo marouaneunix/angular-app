@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col">
+        <app-author-filter (onFilterEmitEvent)="filterByAuthorName($event)"></app-author-filter>
+    </div>
+    <div>
+        <a class="btn btn-success" routerLink="/authors/new" >new author</a>
+    </div>
+    <div class="w-100"></div>
+    <div class="col">
+        <h1>Authors</h1>
+    </div>
+    <div class="w-100"></div>
+    <div class="col">
+        <app-author-list [authors]="authors" (onDetailsEmitEvent)="getAuthorDetails($event)"></app-author-list>
+    </div>
+</div>
+

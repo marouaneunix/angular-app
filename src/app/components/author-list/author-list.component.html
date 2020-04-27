@@ -1,0 +1,17 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Age</th>
+        <th scope="col">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let author of authors" (click)="getDetails(author.id)">
+            <th scope="row">{{author.id}}</th>
+            <td>{{author.age | ageAuthor}}</td>
+            <td>{{author.name}}</td>
+        </tr>
+    </tbody>
+</table>
+
