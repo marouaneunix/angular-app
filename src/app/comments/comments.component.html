@@ -1,0 +1,64 @@
+<div>
+  <div class="row justify-content-between">
+    <div class="col-5 card">
+      <div class="row mb-2 mt-2">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <div>
+              <span class="badge">
+                {{value}}
+              </span>
+              <span class="position">
+                <fa [name]="icon" size="3x"></fa>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2 mt-2">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <div>
+              <span class="badge">
+                {{value}}
+              </span>
+              <span class="position">
+                <fa [name]="icon" size="3x"></fa>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="chart">
+            <canvas baseChart
+              [data]="pieChartData"
+              [labels]="pieChartLabels"
+              [chartType]="pieChartType"
+              [options]="pieChartOptions"
+              [plugins]="pieChartPlugins"
+              [colors]="pieChartColors"
+              [legend]="pieChartLegend"
+              (chartClick)="chartClicked($event)">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 card">
+      <div class="chart">
+        <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [colors]="pieChartColors"
+          [legend]="pieChartLegend"
+          (chartClick)="chartClicked($event)">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

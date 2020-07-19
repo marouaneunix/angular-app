@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Author } from 'src/app/models/Author';
 import { AuthorService } from 'src/app/services/author.service';
+import { AuthorRxjsService } from '../../services/author-rxjs.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-author-details',
@@ -10,9 +12,13 @@ import { AuthorService } from 'src/app/services/author.service';
 })
 export class AuthorDetailsComponent implements OnInit {
 
-  author: Author;
+  name = new FormControl('');
+  author: Author = {id:0 , age:0, name:''};
   isError: boolean;
-  constructor(private route: ActivatedRoute, private authorService: AuthorService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private authorService: AuthorService,
+    private authorRxjsService: AuthorRxjsService) { }
 
   ngOnInit() {
     this.isError = false;
@@ -29,4 +35,7 @@ export class AuthorDetailsComponent implements OnInit {
       });
   }
 
+  onClick() {
+    this.authorRxjsService.author = this.name.value;
+  }
 }

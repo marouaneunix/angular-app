@@ -12,6 +12,18 @@
                 <li class="list-group-item">{{author.name}}</li>
             </ul>
         </div>
+        <div class="card">
+            <label>
+                Name:
+                <input type="text" [formControl]="name">
+            </label>
+            <div>
+                <p>{{author.name}}</p>
+            </div>
+
+            <div>
+                <button (click)="onClick()">valid</button>
+            </div>
+        </div>
     </div>
 </div>
-<ng-template #error class="danger">ERROR</ng-template>
