@@ -6,20 +6,32 @@
 }
 
 .badge {
-    display: inline-block;
-    min-width: 1em; /* rem unit */
+    min-width: 1.7em; /* rem unit */
+    max-width: 1.7em;
     padding: .3em; /* rem unit */
     border-radius: 50%;
     font-size: 60px;
     text-align: center;
     background: #1779ba;
     color: #fefefe;
-
+    height: 1.7em;
 }
 
+.font {
+  font-size: 2.5vw;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
 .position {
   position: relative;
   left: -1em;
   bottom: 2.5em;
 }
 
+.j {
+  display: flex;
+  align-items: center;
+  flex-flow: center;
+  justify-content: center;
+}
