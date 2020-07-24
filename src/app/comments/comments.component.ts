@@ -44,12 +44,34 @@ export class CommentsComponent implements OnInit {
   }
 
   // events
-  public chartClicked(event: any): void {
-    console.log(event);
+  public chartClicked(e: any): void {
+    if (e.active.length > 0) {
+      const chart = e.active[0]._chart;
+      const activePoints = chart.getElementAtEvent(e.event);
+        if ( activePoints.length > 0) {
+          // get the internal index of slice in pie chart
+          const clickedElementIndex = activePoints[0]._index;
+          const label = chart.data.labels[clickedElementIndex];
+          // get value by index
+          const value = chart.data.datasets[0].data[clickedElementIndex];
+          console.log(clickedElementIndex, label, value)
+        }
+       }
   }
 
-  public chartHover({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+  public chartHover(e: any): void {
+    if (e.active.length > 0) {
+      const chart = e.active[0]._chart;
+      const activePoints = chart.getElementAtEvent(e.event);
+        if ( activePoints.length > 0) {
+          // get the internal index of slice in pie chart
+          const clickedElementIndex = activePoints[0]._index;
+          const label = chart.data.labels[clickedElementIndex];
+          // get value by index
+          const value = chart.data.datasets[0].data[clickedElementIndex];
+          console.log(clickedElementIndex, label, value)
+        }
+       }
   }
 
 
