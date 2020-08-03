@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
+import { ISelectionEvent, IDay } from 'ng2-date-picker';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-comments',
@@ -74,9 +76,12 @@ export class CommentsComponent implements OnInit {
        }
   }
 
+  public selectedDate = moment().format("MM/YYYY"); ;
+  datePickerConfig = {
+    format: 'MM/YYYY'
+  };
 
-  
-
-  
-
+  onSelectMonth(event: IDay) {
+    console.log(this.selectedDate);
+  }
 }

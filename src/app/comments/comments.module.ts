@@ -4,7 +4,8 @@ import { ChartsModule } from 'ng2-charts';
 import { CommentsRoutingModule } from './comments-routing.module';
 import { CommentsComponent } from './comments.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
+import {DpDatePickerModule} from 'ng2-date-picker';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CommentsComponent],
@@ -12,7 +13,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     CommonModule,
     CommentsRoutingModule,
     ChartsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    DpDatePickerModule,
+    FormsModule
   ]
 })
 export class CommentsModule { }

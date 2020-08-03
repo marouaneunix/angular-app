@@ -55,5 +55,11 @@
         </canvas>
       </div>
     </div>
+    <dp-date-picker mode="month" theme="dp-material"
+      [config]="datePickerConfig"
+      (onSelect)="onSelectMonth()"
+      required="true"
+      [(ngModel)]="selectedDate">
+    </dp-date-picker>
   </div>
 </div>
